@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sen-1mi0o-dotnet-basic-gitops
+  description: This is GitOps manifest for sen-1mi0o-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: sen-1mi0o-dotnet-basic
+    janus-idp.io/tekton: sen-1mi0o-dotnet-basic 
+    backstage.io/kubernetes-id: sen-1mi0o-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sen-1mi0o-dotnet-basic
